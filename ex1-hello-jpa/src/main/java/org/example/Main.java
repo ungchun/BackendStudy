@@ -15,11 +15,14 @@ public class Main {
         tx.begin();
 
         try {
+            // 비영속
             Member member = new Member();
             member.setId(1L);
             member.setName("HelloA");
 
+            // 영속
             em.persist(member);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
