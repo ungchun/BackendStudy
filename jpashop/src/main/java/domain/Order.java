@@ -7,6 +7,10 @@ import java.time.LocalDateTime;
 @Table(name = "ORDERS")
 public class Order {
 
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;
+
     @Id @GeneratedValue
     @Column(name = "ORDER_ID")
     private Long id;
